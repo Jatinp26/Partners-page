@@ -1,4 +1,3 @@
-/* Canton Partners Program — styles (shares design system with certification.canton.foundation) */
 :root{
   --ink:#14121A; --bg-dark:#0E0C14; --bg-light:#FAFAF7; --white:#FFFFFF;
   --body:#4E4A57; --muted:#6B6775;
@@ -21,9 +20,8 @@ a{color:inherit}
 section{padding:120px 0}
 @media (max-width:760px){section{padding:80px 0}}
 
-/* type scale */
-h1,h2,h3,h4{font-weight:700}
-.h2{font-size:clamp(38px,5.2vw,60px);line-height:1.04;letter-spacing:-.03em}
+h1,h2,h3,h4{font-weight:650}
+.h2{font-size:clamp(38px,5.2vw,50px);line-height:1.10;letter-spacing:-.03em}
 .lead{font-size:19px;line-height:1.55;color:var(--body)}
 .dark .lead{color:var(--light-body)}
 .center{text-align:center}
@@ -57,10 +55,10 @@ h1,h2,h3,h4{font-weight:700}
 .hero{position:relative;overflow:hidden;text-align:center;padding:120px 0 96px}
 .hero::before{content:"";position:absolute;left:50%;top:-180px;width:1100px;height:620px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(90,61,209,.55),rgba(90,61,209,.18) 55%,transparent);pointer-events:none}
 .hero .wrap{position:relative}
-.hero h1{font-size:clamp(46px,7.4vw,88px);line-height:1.02;letter-spacing:-.035em;color:var(--light-text);max-width:15ch;margin:0 auto}
-.hero .sub{font-size:clamp(26px,3.9vw,46px);line-height:1.1;font-weight:600;letter-spacing:-.022em;color:var(--lilac);margin-top:14px}
-.hero .lead-1{font-size:clamp(19px,1.9vw,22px);line-height:1.5;color:var(--light-lead);max-width:44ch;margin:32px auto 0}
-.hero .lead-2{font-size:18px;line-height:1.6;color:var(--light-2);max-width:54ch;margin:12px auto 0}
+.hero h1{font-size:clamp(66px,8.4vw,68px);line-height:1.12;letter-spacing:-.035em;color:var(--light-text);max-width:500ch;margin:0 auto}
+.hero .sub{font-size:clamp(26px,3.9vw,46px);line-height:1.1;font-weight:550;letter-spacing:-.022em;color:var(--lilac);margin-top:14px}
+.hero .lead-1{font-size:clamp(19px,1.9vw,22px);line-height:1.5;color:var(--light-lead);max-width:64ch;margin:32px auto 0}
+.hero .lead-2{font-size:18px;line-height:1.6;color:var(--light-2);max-width:60ch;margin:12px auto 0}
 .hero .ctas{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:40px}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);max-width:780px;margin:64px auto 0;padding-top:28px;border-top:1px solid var(--line-dark)}
 .facts div{padding:4px 16px}
