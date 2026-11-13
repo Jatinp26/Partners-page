@@ -1,101 +1,155 @@
-// Canton Partners Program — interactions
-//
-// LINKS: every destination that is still being decided lives here, so it can be
-// updated in one place. Leave a value empty ("") and the button stays in place
-// but is marked as unavailable instead of linking nowhere.
 var LINKS = {
-  directory: "https://canton-partners.vercel.app/", // SI dashboard (partner directory)
-  apply:     "",  // Build partner application form (TBD)
-  interest:  "",  // Register-your-interest intake form for Grow / Scale (TBD)
-  contact:   "",  // "Talk to the Foundation" contact form (TBD, confirm with ops)
-  spotlight: "",  // Partner spotlight blog post (TBD)
+  dashboard: "https://canton-partners.vercel.app/", // Canton Partners Dashboard
+  apply:     "",  // "Become a Partner" application form (TBD)
   terms:     ""   // Program Terms & Conditions (TBD, with Legal)
 };
-// Appended to form links so submissions can be attributed to this page.
 var SOURCE_PARAM = "utm_source=canton-partners-program";
-
+var STEP = {
+  business:  { title: "Business Case", body: "Foundation-led workshops on why institutions choose Canton and where your team fits in delivering it." },
+  businessOrg: { title: "Business Case", body: "Foundation-led workshops on why institutions choose Canton and where your organization fits in delivering it." },
+  labs:      { title: "Technical Labs", body: "DevRel-led workshops with hands-on labs. Leave with a working local environment." },
+  certify:   { title: "Certify", body: "Self-paced, with DevRel office hours and a forum channel.", link: { text: "Canton Developer Certification ↗", href: "https://certification.canton.foundation/" } },
+  prove:     { title: "Prove It", body: "Run a validator node, deploy a DAR and execute a smart contract on DevNet. DevRel verifies." },
+  join:      { title: "Join and Get Listed", body: "Apply, complete onboarding with the Foundation, and appear in the Canton Partners Dashboard.", hi: true }
+};
+var CRED = {
+  certify:  "At least 15% of your Canton engineering team (minimum 2 people) complete the Daml 3 certification.",
+  workshop: "Business workshops with the Foundation.",
+  pipeline: "Monthly pipeline and growth update calls with the program team.",
+  devnet:   "A validator node running, a DAR deployed and a smart contract executed on DevNet.",
+  delivery: "Evidence of delivery: at least one completed POC or live deployment on Canton.",
+  dealflow: "Monthly deal flow reviews with the program team."
+};
+var FULL_BENEFITS = [
+  "Listing as an official Canton Partner.",
+  "Free certification for your engineers through the program.",
+  "Invitations to partner roundtables, workshops and ecosystem events.",
+  "Access to the latest Canton ecosystem updates.",
+  "Co-marketing opportunities."
+];
+var LIGHT_BENEFITS = [
+  "Listing as an official Canton Partner.",
+  "Invitations to partner roundtables, workshops and ecosystem events.",
+  "Access to the latest Canton ecosystem updates.",
+  "Co-marketing opportunities."
+];
+var TECH_PATH = [STEP.business, STEP.labs, STEP.certify, STEP.prove, STEP.join];
+var TECH_CREDS = [CRED.certify, CRED.workshop, CRED.pipeline, CRED.devnet, CRED.delivery];
+var CATEGORIES = {
+  tech:     { label: "Technology & Implementation", steps: TECH_PATH, takes: TECH_CREDS, gets: FULL_BENEFITS },
+  security: { label: "Security",                    steps: TECH_PATH, takes: TECH_CREDS, gets: FULL_BENEFITS },
+  infra:    { label: "Infrastructure",              steps: TECH_PATH, takes: TECH_CREDS, gets: FULL_BENEFITS },
+  advisory: { label: "Advisory & Consulting",       steps: [STEP.businessOrg, STEP.join], takes: [CRED.workshop, CRED.pipeline], gets: LIGHT_BENEFITS },
+  gtm:      { label: "Market & GTM",                steps: [STEP.businessOrg, STEP.join], takes: [CRED.workshop, CRED.pipeline], gets: LIGHT_BENEFITS },
+  capital:  { label: "Capital",                     steps: [STEP.businessOrg, STEP.join], takes: [CRED.dealflow], gets: LIGHT_BENEFITS }
+};
+var ORDER = ["tech", "security", "infra", "advisory", "gtm", "capital"];
 (function () {
-  // ---- Wire up link targets -------------------------------------------------
-  document.querySelectorAll('[data-link]').forEach(function (a) {
-    var url = LINKS[a.getAttribute('data-link')];
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  var TICK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5 9-10"/></svg>';
+  document.querySelectorAll("[data-link]").forEach(function (a) {
+    var key = a.getAttribute("data-link"), url = LINKS[key];
     if (!url) {
-      a.setAttribute('aria-disabled', 'true');
-      a.setAttribute('title', 'Coming soon');
-      a.style.opacity = '.55';
-      a.style.cursor = 'not-allowed';
-      a.addEventListener('click', function (e) { e.preventDefault(); });
+      a.setAttribute("aria-disabled", "true"); a.title = "Coming soon";
+      a.style.opacity = ".55"; a.style.cursor = "not-allowed";
+      a.addEventListener("click", function (e) { e.preventDefault(); });
       return;
     }
-    var key = a.getAttribute('data-link');
-    if (key !== 'directory' && key !== 'spotlight' && key !== 'terms') {
-      var track = a.getAttribute('data-track-param');
-      url += (url.indexOf('?') > -1 ? '&' : '?') + SOURCE_PARAM + (track ? '&track=' + track : '');
-    }
+    if (key === "apply") url += (url.indexOf("?") > -1 ? "&" : "?") + SOURCE_PARAM;
     a.href = url;
-    if (/^https?:/.test(url) && url.indexOf(location.host) === -1) a.rel = 'noopener';
   });
-
-  // ---- Partner type tabs (Build / Grow / Scale), kept in sync ---------------
-  var TRACKS = ['build', 'grow', 'scale'];
-  var tablists = Array.prototype.slice.call(document.querySelectorAll('[role="tablist"]'));
-
-  function select(track, focusTab) {
-    if (TRACKS.indexOf(track) === -1) return;
-    tablists.forEach(function (list) {
-      list.querySelectorAll('[role="tab"]').forEach(function (tab) {
-        var on = tab.getAttribute('data-track') === track;
-        tab.setAttribute('aria-selected', on ? 'true' : 'false');
-        tab.tabIndex = on ? 0 : -1;
-        var panel = document.getElementById(tab.getAttribute('aria-controls'));
-        if (panel) panel.hidden = !on;
-        if (on && focusTab === list) tab.focus();
-      });
+  var state = { path: "tech", req: "tech" };
+  function buildTabs(list, group) {
+    list.innerHTML = ORDER.map(function (id) {
+      return '<button type="button" role="tab" class="tab" id="tab-' + group + '-' + id + '" data-id="' + id + '">' + esc(CATEGORIES[id].label) + "</button>";
+    }).join("");
+    list.addEventListener("click", function (e) {
+      var b = e.target.closest(".tab"); if (b) select(group, b.getAttribute("data-id"));
     });
-  }
-
-  tablists.forEach(function (list) {
-    list.addEventListener('click', function (e) {
-      var tab = e.target.closest('[role="tab"]');
-      if (tab) select(tab.getAttribute('data-track'));
-    });
-    list.addEventListener('keydown', function (e) {
-      var tabs = Array.prototype.slice.call(list.querySelectorAll('[role="tab"]'));
-      var i = tabs.indexOf(document.activeElement);
+    list.addEventListener("keydown", function (e) {
+      var tabs = [].slice.call(list.querySelectorAll(".tab")), i = tabs.indexOf(document.activeElement);
       if (i < 0) return;
-      var next = null;
-      if (e.key === 'ArrowRight') next = tabs[(i + 1) % tabs.length];
-      if (e.key === 'ArrowLeft') next = tabs[(i - 1 + tabs.length) % tabs.length];
-      if (e.key === 'Home') next = tabs[0];
-      if (e.key === 'End') next = tabs[tabs.length - 1];
-      if (next) { e.preventDefault(); select(next.getAttribute('data-track'), list); }
+      var n = null;
+      if (e.key === "ArrowRight") n = tabs[(i + 1) % tabs.length];
+      if (e.key === "ArrowLeft") n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (e.key === "Home") n = tabs[0];
+      if (e.key === "End") n = tabs[tabs.length - 1];
+      if (n) { e.preventDefault(); select(group, n.getAttribute("data-id")); n.focus(); }
+    });
+  }
+  function renderPath() {
+    var c = CATEGORIES[state.path], panel = document.getElementById("path-panel");
+    panel.querySelector(".cat-title").textContent = c.label;
+    panel.querySelector(".stepcards").innerHTML = c.steps.map(function (s, i) {
+      return '<div class="stepcard' + (s.hi ? " hi" : "") + '"><div class="n">' + String(i + 1).padStart(2, "0") + "</div><h4>" + esc(s.title) + "</h4><p>" + esc(s.body) + "</p>" +
+        (s.link ? '<a href="' + s.link.href + '">' + esc(s.link.text) + "</a>" : "") + "</div>";
+    }).join("");
+    panel.setAttribute("aria-labelledby", "tab-path-" + state.path);
+  }
+  function renderReq() {
+    var c = CATEGORIES[state.req], panel = document.getElementById("req-panel");
+    panel.querySelector(".cb-cat").textContent = c.label.toUpperCase();
+    panel.querySelector('[data-list="takes"]').innerHTML = c.takes.map(function (t) { return "<li>" + TICK + "<span>" + esc(t) + "</span></li>"; }).join("");
+    panel.querySelector('[data-list="gets"]').innerHTML = c.gets.map(function (t) { return "<li>" + TICK + "<span>" + esc(t) + "</span></li>"; }).join("");
+    panel.setAttribute("aria-labelledby", "tab-req-" + state.req);
+  }
+  function select(group, id) {
+    if (!CATEGORIES[id]) return;
+    state[group] = id;
+    document.querySelectorAll('[data-tabs="' + group + '"] .tab').forEach(function (b) {
+      var on = b.getAttribute("data-id") === id;
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      b.tabIndex = on ? 0 : -1;
+    });
+    group === "path" ? renderPath() : renderReq();
+  }
+  document.querySelectorAll("[data-tabs]").forEach(function (list) { buildTabs(list, list.getAttribute("data-tabs")); });
+  select("path", "tech"); select("req", "tech");
+  document.querySelectorAll(".cat[data-cat]").forEach(function (row) {
+    row.addEventListener("click", function () {
+      var id = row.getAttribute("data-cat");
+      select("path", id); select("req", id);
     });
   });
-
-  // Partner-type links in "Three Ways Partners Help" (#build, #grow, #scale)
-  function fromHash() {
-    var h = location.hash.slice(1);
-    if (TRACKS.indexOf(h) > -1) {
-      select(h);
-      var path = document.querySelector('#path .tabs-label') || document.getElementById('path');
-      if (path) path.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+  var tl = document.getElementById("timeline");
+  if (tl) {
+    var items = [].slice.call(tl.querySelectorAll(".steps li"));
+    var bar = tl.querySelector(".tl-progress");
+    var hovering = false;
+    function setStep(n) {
+      items.forEach(function (li, i) { li.classList.toggle("on", i <= n); li.classList.toggle("current", i === n); });
+      bar.style.width = "calc((100% + 32px) * " + Math.max(0, n) + " / 4)";
     }
-    var el = h && document.getElementById(h);
-    if (el && el.tagName === 'DETAILS') el.open = true;
+    items.forEach(function (li, i) {
+      li.addEventListener("mouseenter", function () { hovering = true; setStep(i); });
+    });
+    tl.querySelector(".steps").addEventListener("mouseleave", function () { hovering = false; setStep(3); });
+    var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function run() {
+      if (reduce) { setStep(3); return; }
+      [0, 1, 2, 3].forEach(function (n, k) { setTimeout(function () { if (!hovering) setStep(n); }, 250 + k * 520); });
+    }
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (es) {
+        if (es.some(function (e) { return e.isIntersecting; })) { run(); io.disconnect(); }
+      }, { threshold: 0.35 });
+      io.observe(tl);
+    } else { setStep(3); }
   }
-  window.addEventListener('hashchange', fromHash);
-  fromHash();
-
-  // ---- Highlight the nav link for the section in view ----------------------
-  var links = Array.prototype.slice.call(document.querySelectorAll('.nav ul a[href^="#"]'));
-  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); }).filter(Boolean);
-  if ('IntersectionObserver' in window && sections.length) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        var id = '#' + entry.target.id;
-        links.forEach(function (a) { a.classList.toggle('active', a.getAttribute('href') === id); });
+  function openFromHash() {
+    var el = location.hash && document.getElementById(location.hash.slice(1));
+    if (el && el.tagName === "DETAILS") el.open = true;
+  }
+  window.addEventListener("hashchange", openFromHash); openFromHash();
+  var links = [].slice.call(document.querySelectorAll('.header nav a[href^="#"]'));
+  var secs = links.map(function (a) { return document.querySelector(a.getAttribute("href")); }).filter(Boolean);
+  if ("IntersectionObserver" in window) {
+    var nio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + e.target.id); });
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
-    sections.forEach(function (s) { io.observe(s); });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    secs.forEach(function (s) { nio.observe(s); });
   }
 })();
