@@ -1,5 +1,5 @@
 var LINKS = {
-  dashboard: "https://canton-partners.vercel.app/", // Canton Partners Dashboard
+  dashboard: "https://directory.partners.canton.foundation/", // Canton Partners Dashboard
   apply:     "",  // "Become a Partner" application form (TBD)
   terms:     ""   // Program Terms & Conditions (TBD, with Legal)
 };
