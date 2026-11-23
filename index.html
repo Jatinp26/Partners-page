@@ -113,17 +113,17 @@
     <div class="wrap">
       <div class="find-box">
         <div class="find-logos">
-          <div class="logos">
-            <div class="logo-tile">IntellectEU</div>
-            <div class="logo-tile">Obsidian</div>
-            <div class="logo-tile">HydraX</div>
-            <div class="logo-tile">SBI Digital Practice</div>
-            <div class="logo-tile">Digital Asset</div>
-            <div class="logo-tile">T-Rize</div>
-            <div class="logo-tile">Tiger Research</div>
-            <div class="logo-tile">Wavebridge<small>(Soft commitment)</small></div>
-            <div class="logo-tile">IBM<small>(Soft commitment)</small></div>
-            <div class="logo-tile">LG CNS<small>(Pending)</small></div>
+          <div class="logos" id="partner-logos">
+            <div class="logo-tile"><span class="logo-word">SBI Digital Practice</span></div>
+            <div class="logo-tile"><span class="logo-word">LG CNS</span></div>
+            <div class="logo-tile"><span class="logo-word">T-RIZE</span></div>
+            <div class="logo-tile"><span class="logo-word">IntellectEU</span></div>
+            <div class="logo-tile"><span class="logo-word">Obsidian</span></div>
+            <div class="logo-tile"><span class="logo-word">HydraX</span></div>
+            <div class="logo-tile"><span class="logo-word">Digital Asset</span></div>
+            <div class="logo-tile"><span class="logo-word">Tiger Research</span></div>
+            <div class="logo-tile"><span class="logo-word">Wavebridge</span></div>
+            <div class="logo-tile"><span class="logo-word">IBM</span></div>
           </div>
         </div>
         <div class="find-copy">
@@ -144,15 +144,12 @@
       <p class="sub">Success stories from Canton Partners.</p>
     </div>
     <div class="wrap">
-      <div class="stories">
-        <article class="story">
-          <div class="row"><span class="loc">KOREA</span><span class="pill">Coming soon</span></div>
-          <h3>Taking institutions live in Korea.</h3>
-          <p>Korea is an early model for the program. The full story from a launch partner is coming soon.</p>
-          <span class="tag"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 13h8M8 17h5"/></svg>Story</span>
-        </article>
-        <article class="story slot"><span class="k">[NEXT STORY]</span><p>Slot for a partner story or announcement.</p></article>
-        <article class="story slot"><span class="k">[NEXT STORY]</span><p>Slot for a partner story or announcement.</p></article>
+      <ul class="spot-track" id="spot-track" aria-label="Partner stories"></ul>
+      <div class="spot-nav">
+        <div class="spot-progress" aria-hidden="true"><span id="spot-bar"></span></div>
+        <span class="spot-count" id="spot-count" aria-live="polite"></span>
+        <button type="button" class="spot-btn" id="spot-prev" aria-label="Previous stories"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6"/></svg></button>
+        <button type="button" class="spot-btn" id="spot-next" aria-label="Next stories"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6"/></svg></button>
       </div>
     </div>
   </section>
@@ -207,6 +204,11 @@
     <div class="legal"><span>© Canton Foundation</span><a data-link="terms" href="#">Canton Partners Program Terms &amp; Conditions</a></div>
   </div>
 </footer>
+<dialog class="story" id="story" aria-labelledby="story-title">
+  <button type="button" class="story-x" aria-label="Close story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <div id="story-body"></div>
+</dialog>
 <script src="script.js" defer></script>
+<script src="partners.js" defer></script>
 </body>
 </html>

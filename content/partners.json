@@ -1,0 +1,174 @@
+[
+  {
+    "slug": "sbi-digital-practice",
+    "name": "SBI Digital Practice",
+    "logo": "assets/logos/sbi.jpg",
+    "logoOnDark": "",
+    "category": "Technology & Implementation",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "With securities, banking, and digital asset businesses across Asia, SBI Group is in a position to bring regulated institutions onto Canton at scale.",
+      "quote": "With securities, banking, and digital asset businesses across Asia, SBI Group is in a position to bring regulated institutions onto Canton at scale. As a launch partner of the Canton Partners Program, we will put the Group’s client base and partner network to work in connecting APAC markets with the global Canton ecosystem.",
+      "person": "Ryo Shimotsu",
+      "role": "Representative Director, SBI Digital Practice, Inc.",
+      "about": [
+        "SBI Group is one of Japan’s leading financial services groups, spanning securities, banking, insurance, asset management, and digital assets, with operations across Asia and globally. SBI Digital Practice is the Group’s dedicated entity for Canton Network in the Asia-Pacific region. We operate SBI Group’s standalone Super Validator node, sit on the Canton Foundation board, and contribute to its working groups, including the Collateral Subcommittee. Through the Canton Partners Program, we will support financial institutions and start-ups across APAC in moving onto Canton, from node operations and Daml application development to the design of tokenized asset use cases, with a focus on cross-border settlement, foreign exchange, and collateral mobility. By drawing on SBI Group’s businesses and its network of partner institutions across the region, we aim to connect APAC markets with the global Canton ecosystem and accelerate production-grade adoption."
+      ]
+    }
+  },
+  {
+    "slug": "lg-cns",
+    "name": "LG CNS",
+    "logo": "assets/logos/LG.png",
+    "logoOnDark": "",
+    "category": "Technology & Implementation",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "Joining a settlement network reaches into ledgers, controls and reporting institutions run every day.",
+      "quote": "Joining a settlement network reaches into ledgers, controls and reporting institutions run every day. That has been our work for 30 years, most recently with real money under central bank validation. As the first certified Technology & Implementation Partner of the Canton Partners Program, we will bring that expertise to the Canton Network so institutions can participate with confidence.",
+      "person": "Sungwoo Cho",
+      "role": "Vice President, LG CNS",
+      "about": [
+        "LG CNS is an inaugural Launch Partner in the Technology & Implementation category of the Canton Partners Program. LG CNS has built core systems for leading banks, securities firms and insurers for more than 30 years, and has worked on digital assets since issuing Korea’s first blockchain-based electronic securities in 2015. As lead contractor for the Bank of Korea’s Project Hangang, it ran real-money deposit token payments across seven banks and, in a mock market of nine banks and eight securities firms, settled tokenized securities against digital currency across separate ledgers. Its KITL platform operates permissioned and public assets in one system. With the Canton Foundation, LG CNS is identifying use cases in tokenized securities, repo and payments, and establishing the implementation framework institutions in Korea and Asia-Pacific need to join the network in line with local regulatory requirements, a practical path to global institutional markets."
+      ]
+    }
+  },
+  {
+    "slug": "t-rize",
+    "name": "T-RIZE",
+    "logo": "assets/logos/trize.png",
+    "logoOnDark": "",
+    "category": "Market & GTM",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "We’re excited to share what we’ve engineered, and give institutions a faster path from an idea to a product they can launch.",
+      "quote": "The Canton Partner Program gives institutions a direct connection to teams already building on the network. As a Technology & Implementation partner, we’re excited to share what we’ve engineered, and give institutions a faster path from an idea to a product they can launch.",
+      "person": "Eduardo Furtado",
+      "role": "Co-Founder & CTO, T-RIZE Group",
+      "about": [
+        "T-RIZE is a Canadian technology and implementation partner that designs, connects and operates tokenized financial workflows on the Canton Network. We work with global financial institutions to bring tokenized products into production alongside existing systems and partners, while maintaining the confidentiality, governance and control institutional markets require.",
+        "We also contribute to Canton’s evolution. As a Premier Member of the Canton Foundation, T-RIZE holds a seat on the Foundation’s Board and serves on its Collateral Subcommittee, where we work to expand the use of tokenized assets as institutional collateral. Through the technology committees, we evaluate ecosystem grant proposals and help shape priorities for the network’s development.",
+        "This involvement gives us insight into the network’s direction that we translate into practical solutions. Drawing on experience with multi-party validation, interoperability and secure transaction workflows, we facilitate the adoption of new network capabilities without disrupting established operations. Our focus is on resilient infrastructure that can support evolving financial products, institutional requirements and the continued development of Canton."
+      ]
+    }
+  },
+  {
+    "slug": "intellecteu",
+    "name": "IntellectEU",
+    "logo": "assets/logos/IEU.svg",
+    "logoOnDark": "",
+    "category": "Technology & Implementation",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "[Short quote from IntellectEU for the card. One or two sentences.]",
+      "quote": "[Full quote from IntellectEU, shown at the top of the pop-up. Two to four sentences.]",
+      "person": "[Name]",
+      "role": "[Title], IntellectEU",
+      "about": [
+        "[About the collaboration. One to three short paragraphs from IntellectEU, approved by marketing.]"
+      ]
+    }
+  },
+  {
+    "slug": "obsidian",
+    "name": "Obsidian",
+    "logo": "assets/logos/obsidian.png",
+    "logoOnDark": "",
+    "category": "Technology & Implementation",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "[Short quote from Obsidian for the card. One or two sentences.]",
+      "quote": "[Full quote from Obsidian, shown at the top of the pop-up. Two to four sentences.]",
+      "person": "[Name]",
+      "role": "[Title], Obsidian",
+      "about": [
+        "[About the collaboration. One to three short paragraphs from Obsidian, approved by marketing.]"
+      ]
+    }
+  },
+  {
+    "slug": "hydrax",
+    "name": "HydraX",
+    "logo": "assets/logos/hydrax.jpeg",
+    "logoOnDark": "",
+    "category": "Infrastructure",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "[Short quote from HydraX for the card. One or two sentences.]",
+      "quote": "[Full quote from HydraX, shown at the top of the pop-up. Two to four sentences.]",
+      "person": "[Name]",
+      "role": "[Title], HydraX",
+      "about": [
+        "[About the collaboration. One to three short paragraphs from HydraX, approved by marketing.]"
+      ]
+    }
+  },
+  {
+    "slug": "digital-asset",
+    "name": "Digital Asset",
+    "logo": "assets/logos/hydrax.jpeg",
+    "logoOnDark": "",
+    "category": "Technology & Implementation",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "[Short quote from Digital Asset for the card. One or two sentences.]",
+      "quote": "[Full quote from Digital Asset, shown at the top of the pop-up. Two to four sentences.]",
+      "person": "[Name]",
+      "role": "[Title], Digital Asset",
+      "about": [
+        "[About the collaboration. One to three short paragraphs from Digital Asset, approved by marketing.]"
+      ]
+    }
+  },
+  {
+    "slug": "tiger-research",
+    "name": "Tiger Research",
+    "logo": "assets/logos/Tiger.png",
+    "logoOnDark": "",
+    "category": "Market & GTM",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "[Short quote from Tiger Research for the card. One or two sentences.]",
+      "quote": "[Full quote from Tiger Research, shown at the top of the pop-up. Two to four sentences.]",
+      "person": "[Name]",
+      "role": "[Title], Tiger Research",
+      "about": [
+        "[About the collaboration. One to three short paragraphs from Tiger Research, approved by marketing.]"
+      ]
+    }
+  },
+  {
+    "slug": "wavebridge",
+    "name": "Wavebridge",
+    "logo": "assets/logos/wavebridge.svg",
+    "logoOnDark": "",
+    "category": "Capital",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "[Short quote from Wavebridge for the card. One or two sentences.]",
+      "quote": "[Full quote from Wavebridge, shown at the top of the pop-up. Two to four sentences.]",
+      "person": "[Name]",
+      "role": "[Title], Wavebridge",
+      "about": [
+        "[About the collaboration. One to three short paragraphs from Wavebridge, approved by marketing.]"
+      ]
+    }
+  },
+  {
+    "slug": "ibm",
+    "name": "IBM",
+    "logo": "assets/logos/ibm.jpg",
+    "logoOnDark": "",
+    "category": "Infrastructure",
+    "note": "",
+    "spotlight": {
+      "cardQuote": "[Short quote from IBM for the card. One or two sentences.]",
+      "quote": "[Full quote from IBM, shown at the top of the pop-up. Two to four sentences.]",
+      "person": "[Name]",
+      "role": "[Title], IBM",
+      "about": [
+        "[About the collaboration. One to three short paragraphs from IBM, approved by marketing.]"
+      ]
+    }
+  }
+]
