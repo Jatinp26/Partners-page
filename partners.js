@@ -4,7 +4,7 @@
   var grid = document.getElementById("partner-logos");
   var track = document.getElementById("spot-track");
   var dlg = document.getElementById("story");
-  if (!grid && !track) return
+  if (!grid && !track) return;
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
@@ -38,11 +38,10 @@
     if (!list.length) { if (section) section.hidden = true; return; }
     var bySlug = {};
     list.forEach(function (p) { bySlug[p.slug] = p; });
-
     track.innerHTML = list.map(function (p) {
       var s = p.spotlight;
       return '<li class="spot-card">' +
-        '<div class="spot-top"><span class="cat">' + esc(p.category) + '</span>' +
+        '<div class="spot-top"><span class="spot-cat">' + esc(p.category) + '</span>' +
         '<button type="button" class="plus" data-story="' + esc(p.slug) + '" aria-label="Read the ' + esc(p.name) + ' story">' +
         '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div>' +
         logoHTML(p, true, "spot-logo") +
@@ -87,7 +86,7 @@
       var s = p.spotlight;
       lastFocus = opener || document.activeElement;
       document.getElementById("story-body").innerHTML =
-        '<div class="story-head">' + logoHTML(p, true, "story-logo") + '<span class="cat">' + esc(p.category) + "</span></div>" +
+        '<div class="story-head">' + logoHTML(p, true, "story-logo") + '<span class="spot-cat">' + esc(p.category) + "</span></div>" +
         '<div class="story-grid">' +
           '<div class="story-who"><strong id="story-title">' + esc(s.person) + "</strong><span>" + esc(s.role) + "</span></div>" +
           '<div class="story-main"><blockquote class="story-quote"><span class="q">“</span>' + esc(s.quote || s.cardQuote) + '<span class="q">”</span></blockquote>' +
