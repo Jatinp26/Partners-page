@@ -17,18 +17,23 @@
     return '<span class="' + cls + '"><img src="' + esc(src) + '" alt="' + esc(p.name) + '" loading="lazy" ' +
       'onerror="this.replaceWith(Object.assign(document.createElement(\'span\'),{className:\'logo-word\',textContent:this.alt}))"></span>';
   }
+  function catsHTML(p) {
+    return [].concat(p.category || []).map(function (c) { return '<span class="spot-cat">' + esc(c) + "</span>"; }).join("");
+  }
   fetch(CONTENT, { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
     .then(function (list) {
       list = (Array.isArray(list) ? list : []).filter(function (p) { return p && p.name; });
       renderGrid(list);
-      renderSpotlight(list.filter(function (p) { return p.spotlight; }));
+      renderSpotlight(list.filter(function (p) { return p.spotlight; })
+        .sort(function (a, b) { return (a.spotlight.order || 999) - (b.spotlight.order || 999); }));
     })
     .catch(function (e) { console.error("Could not load " + CONTENT + ":", e); });
   function renderGrid(list) {
     if (!grid || !list.length) return;
     grid.innerHTML = list.map(function (p) {
-      return '<div class="logo-tile">' + logoHTML(p, false, "logo-img") +
+      var h = Number(p.logoHeight) > 0 ? ' style="--logo-h:' + Number(p.logoHeight) + 'px"' : "";
+      return '<div class="logo-tile"' + h + '>' + logoHTML(p, false, "logo-img") +
         (p.note ? "<small>" + esc(p.note) + "</small>" : "") + "</div>";
     }).join("");
   }
@@ -37,13 +42,12 @@
     var section = document.getElementById("spotlight");
     if (!list.length) { if (section) section.hidden = true; return; }
     var bySlug = {};
-    list.forEach(function (p) { bySlug[p.slug] = p; });
+    list.forEach(function (p) { if (!p.spotlight.pending) bySlug[p.slug] = p; });
     track.innerHTML = list.map(function (p) {
       var s = p.spotlight;
+      if (s.pending) return '<li class="spot-card spot-slot"><span>[' + esc(s.pending) + "]</span></li>";
       return '<li class="spot-card">' +
-        '<div class="spot-top"><span class="spot-cat">' + esc(p.category) + '</span>' +
-        '<button type="button" class="plus" data-story="' + esc(p.slug) + '" aria-label="Read the ' + esc(p.name) + ' story">' +
-        '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button></div>' +
+        '<div class="spot-top"><span class="spot-cats">' + catsHTML(p) + "</span></div>" +
         logoHTML(p, true, "spot-logo") +
         '<blockquote class="spot-quote"><span class="q">“</span>' + esc(s.cardQuote || s.quote) + '<span class="q">”</span></blockquote>' +
         '<div class="spot-foot"><div class="who"><strong>' + esc(s.person) + "</strong><span>" + esc(s.role) + "</span></div>" +
@@ -51,7 +55,7 @@
         "</li>";
     }).join("");
     track.addEventListener("click", function (e) {
-      var b = e.target.closest("[data-story]") || e.target.closest(".spot-card");
+      var b = e.target.closest("[data-story]") || e.target.closest(".spot-card:not(.spot-slot)");
       if (!b) return;
       var slug = b.getAttribute("data-story") || b.querySelector("[data-story]").getAttribute("data-story");
       open(slug, b);
@@ -86,7 +90,7 @@
       var s = p.spotlight;
       lastFocus = opener || document.activeElement;
       document.getElementById("story-body").innerHTML =
-        '<div class="story-head">' + logoHTML(p, true, "story-logo") + '<span class="spot-cat">' + esc(p.category) + "</span></div>" +
+        '<div class="story-head">' + logoHTML(p, true, "story-logo") + '<span class="spot-cats">' + catsHTML(p) + "</span></div>" +
         '<div class="story-grid">' +
           '<div class="story-who"><strong id="story-title">' + esc(s.person) + "</strong><span>" + esc(s.role) + "</span></div>" +
           '<div class="story-main"><blockquote class="story-quote"><span class="q">“</span>' + esc(s.quote || s.cardQuote) + '<span class="q">”</span></blockquote>' +

@@ -1,12 +1,72 @@
 [
   {
-    "slug": "sbi-digital-practice",
-    "name": "SBI Digital Practice",
-    "logo": "assets/logos/sbi.jpg",
+    "slug": "intellecteu",
+    "name": "IntellectEU",
+    "logo": "assets/logos/ieu.svg",
+    "logoOnDark": "",
+    "logoHeight": 84,
+    "category": "Technology & Implementation",
+    "note": "",
+    "spotlight": {
+      "order": 3,
+      "cardQuote": "Choosing who to build with is one of the first decisions financial players joining Canton make.",
+      "quote": "Choosing who to build with is one of the first decisions financial players joining Canton make. The Canton Partners Program makes that decision easier, with Foundation-vetted providers across technology, infrastructure, security and advisory in one place. We are glad to be part of it from day one and to contribute to growing the ecosystem alongside the other partners in the program.",
+      "person": "Anastasiia Vitmer",
+      "role": "Head of Product Growth, IntellectEU | CatalyX",
+      "about": [
+        "IntellectEU has worked with Daml since 2016 and has been part of Canton from the start, as a founding member of the Canton Foundation and a Super Validator on the network. Through CatalyX by IntellectEU, our digital assets unit, we take institutions from their first Canton node to a production application, with one partner for all of it.",
+        "Clients run validator nodes on CatalyX Blockchain Manager and connect the wallet and custody providers of their choice through the same platform. Our team designs and builds their Daml applications, integrates them with the back office systems they already run and handles 24/7 operations after go-live.",
+        "We join the Canton Partners Program as a Launch Partner in Technology & Implementation and look forward to helping more institutions go live on Canton, with a clear path from pilot to production."
+      ]
+    }
+  },
+  {
+    "slug": "obsidian",
+    "name": "Obsidian",
+    "logo": "assets/logos/obs.svg",
     "logoOnDark": "",
     "category": "Technology & Implementation",
     "note": "",
     "spotlight": {
+      "order": 2,
+      "cardQuote": "Korea’s leading securities firms and banks are ready to move from experimentation to real-world deployment of tokenized assets.",
+      "quote": "Korea’s leading securities firms and banks are ready to move from experimentation to real-world deployment of tokenized assets. Joining the Canton Partners Program allows us to give them a network built for institutional finance, with the privacy, interoperability, and regulatory alignment they require. We’re proud to help shape the future of Korea’s capital markets.",
+      "person": "Ryan Trinkle",
+      "role": "Co-Founder & CEO, Obsidian Systems",
+      "about": [
+        "Obsidian Systems and the Canton Network are working together to bring institutional-grade tokenization and digital asset infrastructure to the world’s capital markets. Building on Canton’s privacy-enabled, interoperable network, we are developing tokenized deposit, tokenized securities, real-time settlement, and collateral mobility solutions for securities firms and banks. For Korean financial institutions, this collaboration offers a practical path to adopting blockchain technology without compromising the data privacy, regulatory compliance, and operational controls. As Korea advances its regulatory framework for tokenized securities, our goal is to help local institutions connect to global liquidity, reduce settlement friction, and launch new products with confidence. Together, we aim to strengthen Korea’s position as a hub for next-generation financial market infrastructure."
+      ]
+    }
+  },
+  {
+    "slug": "hydrax",
+    "name": "HydraX",
+    "logo": "assets/logos/hydrax.svg",
+    "logoOnDark": "",
+    "category": "Technology & Implementation",
+    "note": "",
+    "spotlight": {
+      "order": 8,
+      "cardQuote": "Canton was designed with regulated institutions in mind.",
+      "quote": "Canton was designed with regulated institutions in mind. We built our infrastructure the same way, because institutions need more than network access to bring assets and operations on-chain. They need applications and services that support their regulatory and operational requirements. Through the Canton Partner Program, we can bring that support to more institutions across Asia-Pacific.",
+      "person": "Daryl Low",
+      "role": "CEO, Hydra X",
+      "about": [
+        "Hydra X builds and runs regulated infrastructure for tokenised capital markets from Singapore. We work with financial institutions and issuers on Canton through custody, tokenisation and managed node services. In 2024, we became the first licensed custodian in Asia-Pacific to provide custody for Canton Coin.",
+        "HX Axis is our enterprise package for onboarding financial institutions to Canton. It includes Node-as-a-Service, which gives banks, brokers and asset managers their own node on the network, set up and managed by Hydra X. Our Tokenisation Agent service lets issuers bring assets to Canton without a node of their own, using our technology and licences, with regulated custody available where needed.",
+        "As a launch partner of the Canton Partner Program, we are extending this work to more institutions in the region."
+      ]
+    }
+  },
+  {
+    "slug": "sbi-digital-practice",
+    "name": "SBI Digital Practice",
+    "logo": "assets/logos/sbi.svg",
+    "logoOnDark": "",
+    "category": "Technology & Implementation",
+    "note": "",
+    "spotlight": {
+      "order": 5,
       "cardQuote": "With securities, banking, and digital asset businesses across Asia, SBI Group is in a position to bring regulated institutions onto Canton at scale.",
       "quote": "With securities, banking, and digital asset businesses across Asia, SBI Group is in a position to bring regulated institutions onto Canton at scale. As a launch partner of the Canton Partners Program, we will put the Group’s client base and partner network to work in connecting APAC markets with the global Canton ecosystem.",
       "person": "Ryo Shimotsu",
@@ -17,30 +77,26 @@
     }
   },
   {
-    "slug": "lg-cns",
-    "name": "LG CNS",
-    "logo": "assets/logos/LG.png",
+    "slug": "digital-asset",
+    "name": "Digital Asset",
+    "logo": "assets/logos/DA.svg",
     "logoOnDark": "",
     "category": "Technology & Implementation",
     "note": "",
     "spotlight": {
-      "cardQuote": "Joining a settlement network reaches into ledgers, controls and reporting institutions run every day.",
-      "quote": "Joining a settlement network reaches into ledgers, controls and reporting institutions run every day. That has been our work for 30 years, most recently with real money under central bank validation. As the first certified Technology & Implementation Partner of the Canton Partners Program, we will bring that expertise to the Canton Network so institutions can participate with confidence.",
-      "person": "Sungwoo Cho",
-      "role": "Vice President, LG CNS",
-      "about": [
-        "LG CNS is an inaugural Launch Partner in the Technology & Implementation category of the Canton Partners Program. LG CNS has built core systems for leading banks, securities firms and insurers for more than 30 years, and has worked on digital assets since issuing Korea’s first blockchain-based electronic securities in 2015. As lead contractor for the Bank of Korea’s Project Hangang, it ran real-money deposit token payments across seven banks and, in a mock market of nine banks and eight securities firms, settled tokenized securities against digital currency across separate ledgers. Its KITL platform operates permissioned and public assets in one system. With the Canton Foundation, LG CNS is identifying use cases in tokenized securities, repo and payments, and establishing the implementation framework institutions in Korea and Asia-Pacific need to join the network in line with local regulatory requirements, a practical path to global institutional markets."
-      ]
+      "order": 1,
+      "pending": "Digital Asset – content pending"
     }
   },
   {
     "slug": "t-rize",
     "name": "T-RIZE",
-    "logo": "assets/logos/trize.png",
+    "logo": "assets/logos/trz.svg",
     "logoOnDark": "",
     "category": "Market & GTM",
     "note": "",
     "spotlight": {
+      "order": 6,
       "cardQuote": "We’re excited to share what we’ve engineered, and give institutions a faster path from an idea to a product they can launch.",
       "quote": "The Canton Partner Program gives institutions a direct connection to teams already building on the network. As a Technology & Implementation partner, we’re excited to share what we’ve engineered, and give institutions a faster path from an idea to a product they can launch.",
       "person": "Eduardo Furtado",
@@ -53,104 +109,47 @@
     }
   },
   {
-    "slug": "intellecteu",
-    "name": "IntellectEU",
-    "logo": "assets/logos/IEU.svg",
-    "logoOnDark": "",
-    "category": "Technology & Implementation",
-    "note": "",
-    "spotlight": {
-      "cardQuote": "[Short quote from IntellectEU for the card. One or two sentences.]",
-      "quote": "[Full quote from IntellectEU, shown at the top of the pop-up. Two to four sentences.]",
-      "person": "[Name]",
-      "role": "[Title], IntellectEU",
-      "about": [
-        "[About the collaboration. One to three short paragraphs from IntellectEU, approved by marketing.]"
-      ]
-    }
-  },
-  {
-    "slug": "obsidian",
-    "name": "Obsidian",
-    "logo": "assets/logos/obsidian.png",
-    "logoOnDark": "",
-    "category": "Technology & Implementation",
-    "note": "",
-    "spotlight": {
-      "cardQuote": "[Short quote from Obsidian for the card. One or two sentences.]",
-      "quote": "[Full quote from Obsidian, shown at the top of the pop-up. Two to four sentences.]",
-      "person": "[Name]",
-      "role": "[Title], Obsidian",
-      "about": [
-        "[About the collaboration. One to three short paragraphs from Obsidian, approved by marketing.]"
-      ]
-    }
-  },
-  {
-    "slug": "hydrax",
-    "name": "HydraX",
-    "logo": "assets/logos/hydrax.jpeg",
-    "logoOnDark": "",
-    "category": "Infrastructure",
-    "note": "",
-    "spotlight": {
-      "cardQuote": "[Short quote from HydraX for the card. One or two sentences.]",
-      "quote": "[Full quote from HydraX, shown at the top of the pop-up. Two to four sentences.]",
-      "person": "[Name]",
-      "role": "[Title], HydraX",
-      "about": [
-        "[About the collaboration. One to three short paragraphs from HydraX, approved by marketing.]"
-      ]
-    }
-  },
-  {
-    "slug": "digital-asset",
-    "name": "Digital Asset",
-    "logo": "assets/logos/da-logo.png",
-    "logoOnDark": "",
-    "category": "Technology & Implementation",
-    "note": "",
-    "spotlight": {
-      "cardQuote": "[Short quote from Digital Asset for the card. One or two sentences.]",
-      "quote": "[Full quote from Digital Asset, shown at the top of the pop-up. Two to four sentences.]",
-      "person": "[Name]",
-      "role": "[Title], Digital Asset",
-      "about": [
-        "[About the collaboration. One to three short paragraphs from Digital Asset, approved by marketing.]"
-      ]
-    }
-  },
-  {
     "slug": "tiger-research",
     "name": "Tiger Research",
-    "logo": "assets/logos/Tiger.png",
+    "logo": "assets/logos/trs.svg",
     "logoOnDark": "",
+    "logoHeight": 80,
     "category": "Market & GTM",
     "note": "",
     "spotlight": {
-      "cardQuote": "[Short quote from Tiger Research for the card. One or two sentences.]",
-      "quote": "[Full quote from Tiger Research, shown at the top of the pop-up. Two to four sentences.]",
-      "person": "[Name]",
-      "role": "[Title], Tiger Research",
+      "order": 9,
+      "cardQuote": "Canton’s technology presents meaningful opportunities for the future of institutional finance.",
+      "quote": "Canton’s technology presents meaningful opportunities for the future of institutional finance. We see an opportunity to connect Canton’s global ecosystem with Korea’s financial institutions by bringing together our local network and understanding of the market. Together, we hope to accelerate the adoption of on-chain finance among Korean institutions and contribute to the development of Korea’s digital asset industry.",
+      "person": "Daniel Kim",
+      "role": "Founder & CEO, Tiger Research",
       "about": [
-        "[About the collaboration. One to three short paragraphs from Tiger Research, approved by marketing.]"
+        "Tiger Research joins the Canton Partners Program as a Go-to-Market partner for Korea, supporting Canton’s growth and engagement across the Korean institutional market. With an established network of over 200 institutional clients and distribution capabilities spanning more than 50 media outlets, Tiger Research brings strong local market connections and experience advising blockchain projects across Asia.",
+        "Together, Tiger Research and Canton are working to expand awareness and understanding of Canton among Korean financial institutions and industry stakeholders. Our collaboration includes institutional events and networking opportunities, market research and educational content, media outreach, and resources that help Korean institutions explore Canton’s technology and ecosystem. Through these initiatives, we aim to strengthen Canton’s presence in Korea and contribute to the growth of Korea’s digital asset industry."
       ]
     }
   },
   {
     "slug": "wavebridge",
     "name": "Wavebridge",
-    "logo": "assets/logos/wavebridge.svg",
+    "logo": "assets/logos/wvb.svg",
     "logoOnDark": "",
-    "category": "Capital",
+    "logoHeight": 22,
+    "category": [
+      "Technology & Implementation",
+      "Infrastructure"
+    ],
     "note": "",
     "spotlight": {
-      "cardQuote": "[Short quote from Wavebridge for the card. One or two sentences.]",
-      "quote": "[Full quote from Wavebridge, shown at the top of the pop-up. Two to four sentences.]",
-      "person": "[Name]",
-      "role": "[Title], Wavebridge",
+      "order": 7,
+      "cardQuote": "Korean institutions are ready to move on-chain, and they need infrastructure that meets local regulation and connects them to global counterparties.",
+      "quote": "Korean institutions are ready to move on-chain, and they need infrastructure that meets local regulation and connects them to global counterparties. Canton gives them privacy and interoperability, and Wavebridge provides the regulated access. Joining the Canton Partners Program as a Launch Partner lets us bring that combination to more institutions entering Korea.",
+      "person": "John Oh",
+      "role": "CEO, Wavebridge",
       "about": [
-        "[About the collaboration. One to three short paragraphs from Wavebridge, approved by marketing.]"
+        "Wavebridge is a Korea-based institutional digital asset prime brokerage and registered Virtual Asset Service Provider (VASP), serving financial institutions and corporate clients. Sourcing across multiple liquidity channels, Wavebridge provides deep liquidity and is embedding its rail into Korean financial institutions.",
+        "As a Canton Network validator, Wavebridge is building PADO, an institutional platform for the execution and settlement of tokenized financial transactions, starting with repo and derivatives.",
+        "As Korea’s regulatory framework for digital assets evolves, Wavebridge works alongside Korean financial institutions as a regulated partner, providing Canton-based infrastructure that connects them to tokenized markets and global counterparties.",
+        "In collaboration with the Canton Foundation, Wavebridge has supported the adoption of Canton among Korean financial institutions through validator deployment and proof of concept initiatives. As a Launch Partner, Wavebridge will serve as the implementation partner for institutions bringing tokenized financial products into and out of the Korean market."
       ]
     }
   },
@@ -160,14 +159,23 @@
     "logo": "assets/logos/ibm.jpg",
     "logoOnDark": "",
     "category": "Infrastructure",
+    "note": ""
+  },
+  {
+    "slug": "lg-cns",
+    "name": "LG CNS",
+    "logo": "assets/logos/LG.png",
+    "logoOnDark": "",
+    "category": "Technology & Implementation",
     "note": "",
     "spotlight": {
-      "cardQuote": "[Short quote from IBM for the card. One or two sentences.]",
-      "quote": "[Full quote from IBM, shown at the top of the pop-up. Two to four sentences.]",
-      "person": "[Name]",
-      "role": "[Title], IBM",
+      "order": 4,
+      "cardQuote": "Joining a settlement network reaches into ledgers, controls and reporting institutions run every day.",
+      "quote": "Joining a settlement network reaches into ledgers, controls and reporting institutions run every day. That has been our work for 30 years, most recently with real money under central bank validation. As the first certified Technology & Implementation Partner of the Canton Partners Program in Korea, we will bring that expertise to the Canton Network so institutions can participate with confidence.",
+      "person": "Sungwoo Cho",
+      "role": "Vice President, LG CNS",
       "about": [
-        "[About the collaboration. One to three short paragraphs from IBM, approved by marketing.]"
+        "LG CNS is an inaugural Launch Partner of the Canton Partners Program and the first certified Technology & Implementation Partner in Korea. LG CNS has built core systems for leading banks, securities firms and insurers for more than 30 years, and has worked on digital assets since issuing Korea’s first blockchain-based electronic securities in 2015. As lead contractor for the Bank of Korea’s Project Hangang, it ran real-money deposit token payments across seven banks and, in a mock market of nine banks and eight securities firms, settled tokenized securities against digital currency across separate ledgers. Its KITL platform operates permissioned and public assets in one system. With the Canton Foundation, LG CNS is identifying use cases in tokenized securities, repo and payments, and establishing the implementation framework institutions in Korea and Asia-Pacific need to join the network in line with local regulatory requirements, a practical path to global institutional markets."
       ]
     }
   }

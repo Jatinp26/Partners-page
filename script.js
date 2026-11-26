@@ -1,37 +1,37 @@
 var LINKS = {
-  dashboard: "https://directory.partners.canton.foundation/", // Canton Partners Dashboard
-  apply:     "",  // "Become a Partner" application form (TBD)
-  terms:     ""   // Program Terms & Conditions (TBD, with Legal)
+  dashboard: "https://directory.partners.canton.foundation/",
+  apply:     "",
+  terms:     "" 
 };
 var SOURCE_PARAM = "utm_source=canton-partners-program";
 var STEP = {
-  business:  { title: "Business Case", body: "Foundation-led workshops on why institutions choose Canton and where your team fits in delivering it." },
-  businessOrg: { title: "Business Case", body: "Foundation-led workshops on why institutions choose Canton and where your organization fits in delivering it." },
-  labs:      { title: "Technical Labs", body: "DevRel-led workshops with hands-on labs. Leave with a working local environment." },
-  certify:   { title: "Certify", body: "Self-paced, with DevRel office hours and a forum channel.", link: { text: "Canton Developer Certification ↗", href: "https://certification.canton.foundation/" } },
-  prove:     { title: "Prove It", body: "Run a validator node, deploy a DAR and execute a smart contract on DevNet. DevRel verifies." },
-  join:      { title: "Join and Get Listed", body: "Apply, complete onboarding with the Foundation, and appear in the Canton Partners Dashboard.", hi: true }
+  business:  { title: "Business Case", body: "Foundation-led workshops covering institutional requirements on Canton and how your team can address them." },
+  businessOrg: { title: "Business Case", body: "Foundation-led workshops covering institutional requirements on Canton and how your organization can address them." },
+  labs:      { title: "Technical Labs", body: "Hands-on labs led by Developer Relations, concluding with a fully configured local development environment." },
+  certify:   { title: "Certification", body: "Self-paced Daml 3 certification, supported by Developer Relations office hours and a dedicated forum channel.", link: { text: "Canton Developer Certification ↗", href: "https://certification.canton.foundation/" } },
+  prove:     { title: "Validation", body: "Run a validator node, deploy a DAR, and execute a smart contract on DevNet for verification by Developer Relations." },
+  join:      { title: "Onboarding and Listing", body: "Complete onboarding with the Foundation and be listed in the Canton Partners Directory.", hi: true }
 };
 var CRED = {
-  certify:  "At least 15% of your Canton engineering team (minimum 2 people) complete the Daml 3 certification.",
-  workshop: "Business workshops with the Foundation.",
-  pipeline: "Monthly pipeline and growth update calls with the program team.",
-  devnet:   "A validator node running, a DAR deployed and a smart contract executed on DevNet.",
-  delivery: "Evidence of delivery: at least one completed POC or live deployment on Canton.",
+  certify:  "Daml 3 certification for at least 15% of your Canton engineering team (minimum of two engineers).",
+  workshop: "Participation in Foundation-led business workshops.",
+  pipeline: "Monthly pipeline and growth calls with the program team.",
+  devnet:   "Successful deployment of a validator node, a DAR, and a smart contract on DevNet.",
+  delivery: "A proven track record on Canton, with at least one completed proof of concept or production deployment.",
   dealflow: "Monthly deal flow reviews with the program team."
 };
 var FULL_BENEFITS = [
-  "Listing as an official Canton Partner.",
-  "Free certification for your engineers through the program.",
-  "Invitations to partner roundtables, workshops and ecosystem events.",
+  "Official listing in the Canton Partners Directory.",
+  "Free certification for your engineers.",
+  "Invitations to partner roundtables, workshops, and ecosystem events.",
   "Access to the latest Canton ecosystem updates.",
-  "Co-marketing opportunities."
+  "Co-marketing opportunities with the Foundation."
 ];
 var LIGHT_BENEFITS = [
-  "Listing as an official Canton Partner.",
-  "Invitations to partner roundtables, workshops and ecosystem events.",
+  "Official listing in the Canton Partners Directory.",
+  "Invitations to partner roundtables, workshops, and ecosystem events.",
   "Access to the latest Canton ecosystem updates.",
-  "Co-marketing opportunities."
+  "Co-marketing opportunities with the Foundation."
 ];
 var TECH_PATH = [STEP.business, STEP.labs, STEP.certify, STEP.prove, STEP.join];
 var TECH_CREDS = [CRED.certify, CRED.workshop, CRED.pipeline, CRED.devnet, CRED.delivery];
