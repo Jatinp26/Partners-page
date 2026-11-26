@@ -85,7 +85,7 @@
     "note": "",
     "spotlight": {
       "order": 1,
-      "cardQuote": "Creator and core developer of Canton.",
+      "cardQuote": "Built and maintains the Canton protocol, Daml and the Splice code that runs the Global Synchronizer.",
       "quote": "Built and maintains the Canton protocol, Daml and the Splice code that runs the Global Synchronizer; ships DA Registry for asset issuance; maintains the Wallet SDK, dApp SDK, Wallet Gateway and DPM; delivery partner on the network's flagship institutional deployments.",
       "person": "Yuval",
       "role": "Co-Founder & CEO, Digital Asset",
