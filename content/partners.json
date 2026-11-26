@@ -85,7 +85,14 @@
     "note": "",
     "spotlight": {
       "order": 1,
-      "pending": "Digital Asset – content pending"
+      "cardQuote": "Creator and core developer of Canton.",
+      "quote": "Built and maintains the Canton protocol, Daml and the Splice code that runs the Global Synchronizer; ships DA Registry for asset issuance; maintains the Wallet SDK, dApp SDK, Wallet Gateway and DPM; delivery partner on the network's flagship institutional deployments.",
+      "person": "Yuval",
+      "role": "Co-Founder & CEO, Digital Asset",
+      "about": [
+        "Deepest Canton and Daml engineering bench in the ecosystem: protocol, Global Synchronizer, token standard, issuance and wallet tooling. Long-standing delivery relationships with banks, market infrastructures and asset managers.",
+        "Raised US$355M in Jun 2026 led by a16z crypto at about US$2B valuation; backers include Goldman Sachs, Citadel Securities, HSBC, BNP Paribas and DTCC. Engineers hold Daml 3 certification."
+      ]
     }
   },
   {
@@ -135,9 +142,7 @@
     "logoOnDark": "",
     "logoHeight": 22,
     "category": [
-      "Technology & Implementation",
-      "Infrastructure"
-    ],
+      "Technology & Implementation"    ],
     "note": "",
     "spotlight": {
       "order": 7,
