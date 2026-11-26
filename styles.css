@@ -176,7 +176,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 calc(40px + env(safe-area
 .plus svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
 .spot-card:hover .plus,.plus:focus-visible{background:var(--yellow);border-color:var(--yellow);color:var(--bg)}
 .spot-logo{display:flex;align-items:center;height:46px;margin-top:14px;font-size:24px;color:var(--text)}
-.spot-logo img{max-height:100%;max-width:240px;object-fit:contain}
+.spot-logo img{max-height:90%;max-width:220px;object-fit:contain}
 .spot-quote{margin:24px 0 0;font-size:19px;line-height:1.38;font-weight:500;color:var(--text);flex-grow:1;text-wrap:pretty}
 .spot-quote .q,.story-quote .q{color:var(--yellow)}
 .spot-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;min-height:118px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line-2)}
