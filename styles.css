@@ -121,7 +121,7 @@ section{padding:112px 0;position:relative}
 .find{padding-top:0}
 .find-box{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);border:1px solid var(--line-2);border-radius:12px;overflow:hidden}
 .find-logos{background:var(--bg-alt);padding:48px 40px;display:flex;align-items:center;border-right:1px solid var(--line-2)}
-.logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;width:100%;max-width:560px;margin:0 auto}
+.logos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 40px;width:100%;max-width:580px;margin:0 auto}
 .logo-tile{height:56px;color:var(--text);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;text-align:center;font-size:18px;font-weight:700;line-height:1;letter-spacing:.02em}
 .logo-tile small{font-size:11px;font-weight:400;color:var(--dim)}
 .find-copy{padding:56px 40px;display:flex;flex-direction:column;justify-content:center}
@@ -175,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:64px 0 calc(40px + env(safe-area
 .plus{flex:none;display:grid;place-items:center;width:38px;height:38px;border-radius:50%;border:1px solid var(--line-3);background:transparent;color:var(--text);cursor:pointer;transition:background-color .2s,color .2s,border-color .2s}
 .plus svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
 .spot-card:hover .plus,.plus:focus-visible{background:var(--yellow);border-color:var(--yellow);color:var(--bg)}
-.spot-logo{display:flex;align-items:center;height:46px;margin-top:14px;font-size:24px;color:var(--text)}
+.spot-logo{display:flex;align-items:center;height:46px;margin-top:16px;font-size:24px;color:var(--text)}
 .spot-logo img{max-height:90%;max-width:220px;object-fit:contain}
 .spot-quote{margin:24px 0 0;font-size:19px;line-height:1.38;font-weight:500;color:var(--text);flex-grow:1;text-wrap:pretty}
 .spot-quote .q,.story-quote .q{color:var(--yellow)}
